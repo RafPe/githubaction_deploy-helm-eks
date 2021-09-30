@@ -2,8 +2,8 @@
 name: 'EKS Deployment with Helm'
 description: 'Deploy a helm chart to EKS cluster.'
 branding:
-    icon: anchor
-    color: yellow
+    icon: github
+    color: black
 inputs:
     aws-secret-access-key:
         description: 'AWS credentials used to login to eks.'
