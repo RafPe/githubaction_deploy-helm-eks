@@ -49,6 +49,10 @@ inputs:
         description: "Defines if helm will rollback in case of failure"
         required: false
         default: "true"
+    force:
+        description: "Force resource updates through a replacement strategy"
+        required: false
+        default: "true"        
 runs:
     using: 'docker'
     image: 'Dockerfile'
@@ -64,5 +68,6 @@ runs:
         DEPLOY_NAME: ${{ inputs.name }}
         DEPLOY_CHART_PATH: ${{ inputs.chart-path }}
         DEPLOY_ATOMIC:  ${{ inputs.atomic }}
+        DEPLOY_FORCE:  ${{ inputs.force }}        
         TIMEOUT: ${{ inputs.timeout }}
         UPDATE_DEPS: ${{ inputs.update-deps }}
