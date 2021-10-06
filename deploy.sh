@@ -15,12 +15,15 @@ fi
 # Helm Deployment
 DEPS_UPDATE_COMMAND="helm dependency update ${DEPLOY_CHART_PATH}"
 UPGRADE_COMMAND="helm upgrade --install --timeout ${TIMEOUT}"
-if [ -n "$DEPLOY_ATOMIC" ]; then
+
+if [ "$DEPLOY_ATOMIC" = "true" ]; then
     UPGRADE_COMMAND="${UPGRADE_COMMAND} --atomic"
 fi
-if [ -n "$DEPLOY_FORCE" ]; then
-    UPGRADE_COMMAND="${UPGRADE_COMMAND} --force"
+
+if [ "$DEPLOY_FORCE" = "true" ]; then
+  UPGRADE_COMMAND="${UPGRADE_COMMAND} --force"
 fi
+
 for config_file in ${DEPLOY_CONFIG_FILES//,/ }
 do
     UPGRADE_COMMAND="${UPGRADE_COMMAND} -f ${config_file}"
