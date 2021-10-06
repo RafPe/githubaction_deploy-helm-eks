@@ -20,6 +20,7 @@ Following inputs can be used as `step.with` keys
 | `name`      | String  | The name of the helm release |
 | `chart-path`      | String  | The path to the chart. (defaults to `helm/`) |
 | `atomic`      | String  | Option to rollback in case of failure |
+| `force`      | String  | Option to force resource updates through a replacement strategy |
 
 ## Example usage
 
