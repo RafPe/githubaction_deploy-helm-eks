@@ -48,7 +48,7 @@ inputs:
     atomic:
         description: "Defines if helm will rollback in case of failure"
         required: false
-        default: "true"
+        default: "false"
     force:
         description: "Force resource updates through a replacement strategy"
         required: false
