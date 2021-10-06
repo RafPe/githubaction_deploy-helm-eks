@@ -52,7 +52,7 @@ inputs:
     force:
         description: "Force resource updates through a replacement strategy"
         required: false
-        default: "true"        
+        default: "false"        
 runs:
     using: 'docker'
     image: 'Dockerfile'
